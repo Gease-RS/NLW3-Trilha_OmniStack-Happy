@@ -1,0 +1,22 @@
+yarn add express
+
+yarn add @types/express -D
+
+yarn add typescript -D
+
+yarn tsc --init
+
+Subistituir
+"target": "es5",
+Por 
+"target": "es2017",
+
+yarn add ts-node-dev -D
+
+yarn add typeorm pg
+
+yarn typeorm migration:create -n create-orphanages
+
+yarn typeorm migration:run
+
+postgresql://postgres:postgres@localhost
