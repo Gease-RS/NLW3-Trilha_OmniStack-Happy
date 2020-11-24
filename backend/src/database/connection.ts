@@ -6,5 +6,8 @@ createConnection({
     port: 5432,
     username: "postgres",
     password: "postgres",
-    database: "nlw3db"
+    database: "nlw3db",
+    synchronize: true,
+    logging: false,
 })
+

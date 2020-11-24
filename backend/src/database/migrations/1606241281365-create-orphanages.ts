@@ -1,28 +1,7 @@
-yarn add express
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-yarn add @types/express -D
-
-yarn add typescript -D
-
-yarn tsc --init
-
-Subistituir
-"target": "es5",
-Por 
-"target": "es2017",
-
-yarn add ts-node-dev -D
-
-yarn add typeorm pg
-
-yarn typeorm migration:create -n create-orphanages
-
-yarn typeorm migration:run
-
-postgresql://postgres:postgres@localhost
-
-
-public async up(queryRunner: QueryRunner): Promise<void> {
+export class createOrphanages1606241281365 implements MigrationInterface {
+    public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
           new Table({
             name: 'orphanages',
@@ -42,14 +21,14 @@ public async up(queryRunner: QueryRunner): Promise<void> {
               {
                 name: 'latitude',
                 type: 'decimal',
-                scale: 8,
-                precision: 2,
+                precision: 10,
+                scale: 2,
               },
               {
                 name: 'longitude',
                 type: 'decimal',
-                scale: ,
-                precision: 2,
+                precision: 10,
+                scale: 2,
               },
               {
                 name: 'about',
@@ -76,3 +55,5 @@ public async up(queryRunner: QueryRunner): Promise<void> {
       public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('orphanages');
       }
+
+}
