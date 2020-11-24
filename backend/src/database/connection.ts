@@ -9,5 +9,8 @@ createConnection({
     database: "nlw3db",
     synchronize: true,
     logging: false,
+    entities: [
+    "./src/models/*.ts"
+    ]
 })
 
